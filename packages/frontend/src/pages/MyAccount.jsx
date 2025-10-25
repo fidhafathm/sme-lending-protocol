@@ -26,8 +26,8 @@ const StakeCard = ({ stakeInfo, onStake, onUnstake, onRequestUnstake, isProcessi
 
   return (
     <div className="card-bordered">
-      <h3 className="text-lg font-semibold text-gray-100 mb-6 flex items-center space-x-2">
-        <Lock className="w-5 h-5 text-gray-500" />
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6 flex items-center space-x-2">
+        <Lock className="w-5 h-5 text-gray-500 dark:text-gray-500" />
         <span>Staking</span>
       </h3>
 
@@ -37,27 +37,27 @@ const StakeCard = ({ stakeInfo, onStake, onUnstake, onRequestUnstake, isProcessi
           <div className="stat-value text-xl">
             {formatUnits(stakedAmount, 18)}
           </div>
-          <span className="text-xs text-gray-600 font-mono">SMEDAO</span>
+          <span className="text-xs text-gray-600 dark:text-gray-600 font-mono">SMEDAO</span>
         </div>
 
         <div className="stat-card">
           <span className="stat-label">Unstaking</span>
-          <div className="stat-value text-xl text-amber-400">
+          <div className="stat-value text-xl text-amber-600 dark:text-amber-400">
             {formatUnits(unstakeAmount, 18)}
           </div>
-          <span className="text-xs text-gray-600 font-mono">SMEDAO</span>
+          <span className="text-xs text-gray-600 dark:text-gray-600 font-mono">SMEDAO</span>
         </div>
       </div>
 
       {unstakeAmount > 0n && (
-        <div className="mb-6 card-bordered border-amber-900/20 bg-amber-950/10">
+        <div className="mb-6 card-bordered border-amber-200 dark:border-amber-900/20 bg-amber-50 dark:bg-amber-950/10">
           <div className="flex items-start space-x-3">
-            <AlertCircle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+            <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
             <div>
-              <p className="text-sm font-medium text-amber-400 mb-1">
+              <p className="text-sm font-medium text-amber-600 dark:text-amber-400 mb-1">
                 Unstake Request Pending
               </p>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-700 dark:text-gray-400">
                 {canUnstake
                   ? 'Available for withdrawal now'
                   : `Available in ${Math.ceil((Number(unstakeAvailableAt) - Date.now() / 1000) / 60)} min`
@@ -68,13 +68,13 @@ const StakeCard = ({ stakeInfo, onStake, onUnstake, onRequestUnstake, isProcessi
         </div>
       )}
 
-      <div className="flex space-x-1 border-b border-gray-900 mb-6">
+      <div className="flex space-x-1 border-b border-gray-200 dark:border-gray-900 mb-6">
         <button
           onClick={() => setAction('stake')}
           className={`flex-1 px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
             action === 'stake'
-              ? 'border-blue-500 text-gray-100'
-              : 'border-transparent text-gray-500 hover:text-gray-300'
+              ? 'border-blue-500 text-gray-900 dark:text-gray-100'
+              : 'border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'
           }`}
         >
           Stake
@@ -83,8 +83,8 @@ const StakeCard = ({ stakeInfo, onStake, onUnstake, onRequestUnstake, isProcessi
           onClick={() => setAction('unstake')}
           className={`flex-1 px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
             action === 'unstake'
-              ? 'border-blue-500 text-gray-100'
-              : 'border-transparent text-gray-500 hover:text-gray-300'
+              ? 'border-blue-500 text-gray-900 dark:text-gray-100'
+              : 'border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'
           }`}
         >
           Unstake
@@ -131,34 +131,34 @@ const StakeCard = ({ stakeInfo, onStake, onUnstake, onRequestUnstake, isProcessi
         )}
 
         {isProcessing && (
-          <div className="text-xs text-blue-400 text-center">
+          <div className="text-xs text-blue-600 dark:text-blue-400 text-center">
             Transaction pending... Check MetaMask
           </div>
         )}
 
         {isSuccess && (
-          <div className="text-xs text-emerald-400 text-center">
+          <div className="text-xs text-emerald-600 dark:text-emerald-400 text-center">
             Transaction confirmed!
           </div>
         )}
       </div>
 
-      <div className="mt-6 card bg-zinc-950/30">
-        <h4 className="text-sm font-medium text-gray-300 mb-3">
+      <div className="mt-6 card bg-gray-100 dark:bg-zinc-950/30">
+        <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
           Staking Info
         </h4>
         <div className="space-y-2 text-xs">
-          <div className="flex justify-between text-gray-400">
+          <div className="flex justify-between text-gray-700 dark:text-gray-400">
             <span>Minimum Stake:</span>
-            <span className="text-gray-300 font-mono">100 SMEDAO</span>
+            <span className="text-gray-900 dark:text-gray-300 font-mono">100 SMEDAO</span>
           </div>
-          <div className="flex justify-between text-gray-400">
+          <div className="flex justify-between text-gray-700 dark:text-gray-400">
             <span>Unstake Cooldown:</span>
-            <span className="text-gray-300 font-mono">7 days</span>
+            <span className="text-gray-900 dark:text-gray-300 font-mono">7 days</span>
           </div>
-          <div className="flex justify-between text-gray-400">
+          <div className="flex justify-between text-gray-700 dark:text-gray-400">
             <span>Slash Penalty:</span>
-            <span className="text-red-400 font-mono">10%</span>
+            <span className="text-red-600 dark:text-red-400 font-mono">10%</span>
           </div>
         </div>
       </div>
@@ -265,9 +265,9 @@ export default function MyAccount() {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="card text-center max-w-md py-12">
-          <User className="w-12 h-12 text-gray-700 mx-auto mb-4" />
-          <h2 className="text-lg font-semibold text-gray-100 mb-2">Connect Wallet</h2>
-          <p className="text-sm text-gray-400">
+          <User className="w-12 h-12 text-gray-400 dark:text-gray-700 mx-auto mb-4" />
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Connect Wallet</h2>
+          <p className="text-sm text-gray-700 dark:text-gray-400">
             Connect your wallet to view your account details
           </p>
         </div>
@@ -279,8 +279,8 @@ export default function MyAccount() {
     <div className="space-y-8">
       {/* Header */}
       <div className="space-y-2">
-        <h1 className="text-3xl font-semibold text-gray-100">Account</h1>
-        <p className="text-sm text-gray-500">
+        <h1 className="text-3xl font-semibold text-gray-900 dark:text-gray-100">Account</h1>
+        <p className="text-sm text-gray-600 dark:text-gray-500">
           Manage your DAO membership, staking, and reputation
         </p>
       </div>
@@ -288,7 +288,7 @@ export default function MyAccount() {
       {/* Membership Status */}
       <div className="card-bordered">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-semibold text-gray-100">Membership Status</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Membership Status</h2>
           {isMember ? (
             <span className="badge-success">Active Member</span>
           ) : (
@@ -297,26 +297,26 @@ export default function MyAccount() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="stat-card hover:border-gray-800">
+          <div className="stat-card hover:border-gray-300 dark:hover:border-gray-800">
             <div className="flex items-center justify-between">
               <span className="stat-label">Reputation Score</span>
-              <Award className="w-4 h-4 text-gray-600" />
+              <Award className="w-4 h-4 text-gray-500 dark:text-gray-600" />
             </div>
             <div className="stat-value">{reputationScore}/1000</div>
           </div>
 
-          <div className="stat-card hover:border-gray-800">
+          <div className="stat-card hover:border-gray-300 dark:hover:border-gray-800">
             <div className="flex items-center justify-between">
               <span className="stat-label">Voting Power</span>
-              <TrendingUp className="w-4 h-4 text-gray-600" />
+              <TrendingUp className="w-4 h-4 text-gray-500 dark:text-gray-600" />
             </div>
             <div className="stat-value">{parseFloat(votingPower).toFixed(2)}</div>
           </div>
 
-          <div className="stat-card hover:border-gray-800">
+          <div className="stat-card hover:border-gray-300 dark:hover:border-gray-800">
             <div className="flex items-center justify-between">
               <span className="stat-label">Member Since</span>
-              <Shield className="w-4 h-4 text-gray-600" />
+              <Shield className="w-4 h-4 text-gray-500 dark:text-gray-600" />
             </div>
             <div className="stat-value text-lg">{isMember ? 'Genesis' : 'N/A'}</div>
           </div>
@@ -326,8 +326,8 @@ export default function MyAccount() {
       {/* Balances & Staking */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="card">
-          <h3 className="text-lg font-semibold text-gray-100 mb-6 flex items-center space-x-2">
-            <Coins className="w-5 h-5 text-gray-500" />
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6 flex items-center space-x-2">
+            <Coins className="w-5 h-5 text-gray-500 dark:text-gray-500" />
             <span>Token Balances</span>
           </h3>
 
@@ -335,7 +335,7 @@ export default function MyAccount() {
             <div className="stat-card">
               <div className="flex items-center justify-between mb-1">
                 <span className="stat-label">Prism Token</span>
-                <span className="text-xs text-gray-600 font-mono">Governance</span>
+                <span className="text-xs text-gray-600 dark:text-gray-600 font-mono">Governance</span>
               </div>
               <div className="stat-value">
                 {parseFloat(tokenBalance).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -345,9 +345,9 @@ export default function MyAccount() {
             <div className="stat-card">
               <div className="flex items-center justify-between mb-1">
                 <span className="stat-label">USDT</span>
-                <span className="text-xs text-gray-600 font-mono">Stablecoin</span>
+                <span className="text-xs text-gray-600 dark:text-gray-600 font-mono">Stablecoin</span>
               </div>
-              <div className="stat-value text-emerald-400">
+              <div className="stat-value text-emerald-600 dark:text-emerald-400">
                 ${parseFloat(usdtBalance).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </div>
             </div>
@@ -366,9 +366,9 @@ export default function MyAccount() {
 
       {/* Activity History */}
       <div className="card">
-        <h3 className="text-lg font-semibold text-gray-100 mb-4">Recent Activity</h3>
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Recent Activity</h3>
         <div className="text-center py-12">
-          <p className="text-sm text-gray-500">No recent activity</p>
+          <p className="text-sm text-gray-600 dark:text-gray-500">No recent activity</p>
         </div>
       </div>
     </div>
