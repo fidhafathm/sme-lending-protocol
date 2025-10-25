@@ -33,7 +33,7 @@ const InfoCard = ({ title, items }) => (
     <div className="space-y-3">
       {items.map((item, index) => (
         <div key={index} className="flex items-start space-x-3">
-          <div className="w-1 h-1 rounded-full bg-blue-500 mt-2 flex-shrink-0" />
+          <div className="w-1 h-1  bg-blue-500 mt-2 flex-shrink-0" />
           <div>
             <div className="text-sm font-medium text-gray-700 dark:text-gray-300">{item.title}</div>
             <div className="text-xs text-gray-600 dark:text-gray-500 mt-0.5">{item.description}</div>
@@ -113,7 +113,7 @@ export default function Dashboard() {
       {!isConnected && (
         <div className="card-bordered border-blue-900/20 bg-blue-950/10">
           <div className="flex items-start space-x-3">
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2" />
+            <div className="w-1.5 h-1.5  bg-blue-400 mt-2" />
             <div className="flex-1">
               <div className="text-sm font-medium text-blue-600 dark:text-blue-400">Step 1: Connect Wallet</div>
               <div className="text-sm text-gray-600 dark:text-gray-500 mt-1">
@@ -128,7 +128,7 @@ export default function Dashboard() {
         <div className="card-bordered border-amber-900/20 bg-amber-950/10">
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-start space-x-3 flex-1">
-              <div className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2" />
+              <div className="w-1.5 h-1.5  bg-amber-400 mt-2" />
               <div>
                 <div className="text-sm font-medium text-amber-600 dark:text-amber-400 mb-2">Step 2: Become a Member</div>
                 <div className="text-sm text-gray-700 dark:text-gray-400 space-y-1">
@@ -152,7 +152,7 @@ export default function Dashboard() {
       {isConnected && isMember && (
         <div className="card-bordered border-emerald-900/20 bg-emerald-950/10">
           <div className="flex items-start space-x-3">
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2" />
+            <div className="w-1.5 h-1.5  bg-emerald-400 mt-2" />
             <div>
               <div className="text-sm font-medium text-emerald-600 dark:text-emerald-400">Active Member</div>
               <div className="text-sm text-gray-700 dark:text-gray-400 mt-1">
@@ -196,7 +196,7 @@ export default function Dashboard() {
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Protocol Status</h2>
           <div className="flex items-center space-x-2">
-            <div className={`w-2 h-2 rounded-full ${insuranceHealthy ? 'bg-emerald-400' : 'bg-amber-400'}`} />
+            <div className={`w-2 h-2  ${insuranceHealthy ? 'bg-emerald-400' : 'bg-amber-400'}`} />
             <span className="text-sm text-gray-600 dark:text-gray-500">
               {insuranceHealthy ? 'Healthy' : 'Needs Attention'}
             </span>
@@ -211,9 +211,9 @@ export default function Dashboard() {
             <div className="text-2xl font-semibold text-gray-900 dark:text-gray-100 tabular-nums">
               {totalLoans > 0 ? ((activeLoans / totalLoans) * 100).toFixed(1) : '0.0'}%
             </div>
-            <div className="h-1.5 bg-gray-200 dark:bg-gray-900 rounded-full overflow-hidden">
+            <div className="h-1.5 bg-gray-200 dark:bg-gray-900  overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-500"
+                className="h-full bg-gradient-to-r from-blue-500 to-blue-400  transition-all duration-500"
                 style={{ width: `${totalLoans > 0 ? (activeLoans / totalLoans) * 100 : 0}%` }}
               />
             </div>
@@ -226,9 +226,9 @@ export default function Dashboard() {
             <div className="text-2xl font-semibold text-gray-900 dark:text-gray-100 tabular-nums">
               {((parseFloat(insuranceBalance) / (parseFloat(tvl) || 1)) * 100).toFixed(1)}%
             </div>
-            <div className="h-1.5 bg-gray-200 dark:bg-gray-900 rounded-full overflow-hidden">
+            <div className="h-1.5 bg-gray-200 dark:bg-gray-900  overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full transition-all duration-500"
+                className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400  transition-all duration-500"
                 style={{ width: `${Math.min(((parseFloat(insuranceBalance) / (parseFloat(tvl) || 1)) * 100), 100)}%` }}
               />
             </div>

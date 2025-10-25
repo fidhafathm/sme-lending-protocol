@@ -100,7 +100,7 @@ const LoanRequestCard = ({ request, requestId, onBack, onExecute, userVotingPowe
       {!request.executed && (
         <div className="space-y-2">
           {backingBlockedReason && (
-            <div className="text-xs text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/20 rounded p-2">
+            <div className="text-xs text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/20  p-2">
               ⚠️ {backingBlockedReason}
             </div>
           )}
@@ -350,20 +350,20 @@ export default function Loans() {
         <div>
           {/* Transaction Status */}
           {writeError && (
-            <div className="mb-4 p-4 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900/30 rounded-lg">
+            <div className="mb-4 p-4 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900/30 ">
               <p className="text-sm text-red-600 dark:text-red-300 font-medium mb-2">Transaction Error</p>
               <p className="text-xs text-gray-700 dark:text-gray-400">{writeError.message}</p>
             </div>
           )}
 
           {isPending && (
-            <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900/30 rounded-lg">
+            <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900/30 ">
               <p className="text-sm text-blue-600 dark:text-blue-300">Waiting for wallet confirmation...</p>
             </div>
           )}
 
           {isConfirming && hash && (
-            <div className="mb-4 p-4 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 rounded-lg">
+            <div className="mb-4 p-4 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 ">
               <p className="text-sm text-amber-600 dark:text-amber-300">Transaction confirming...</p>
               <p className="text-xs text-gray-700 dark:text-gray-400 mt-1 font-mono">
                 <a
@@ -379,7 +379,7 @@ export default function Loans() {
           )}
 
           {isSuccess && (
-            <div className="mb-4 p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/30 rounded-lg">
+            <div className="mb-4 p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/30 ">
               <p className="text-sm text-emerald-600 dark:text-emerald-300">Transaction confirmed!</p>
             </div>
           )}
@@ -444,7 +444,7 @@ export default function Loans() {
             <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6">Request a Loan</h2>
 
             {!isConnected && (
-              <div className="p-4 rounded-lg bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 mb-6">
+              <div className="p-4  bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 mb-6">
                 <p className="text-sm text-blue-600 dark:text-blue-400">
                   Please connect your wallet to request a loan
                 </p>
@@ -452,7 +452,7 @@ export default function Loans() {
             )}
 
             {isConnected && !isActiveMember && (
-              <div className="p-4 rounded-lg bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 mb-6">
+              <div className="p-4  bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 mb-6">
                 <p className="text-sm text-amber-600 dark:text-amber-400 mb-2">⚠️ You are not an active DAO member</p>
                 <p className="text-xs text-gray-700 dark:text-gray-400">
                   Only active DAO members can request loans. Ask an existing member to propose you in the Members tab.
@@ -461,7 +461,7 @@ export default function Loans() {
             )}
 
             {isConnected && isActiveMember && !isEligible && (
-              <div className="p-4 rounded-lg bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 mb-6">
+              <div className="p-4  bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 mb-6">
                 <p className="text-sm text-red-600 dark:text-red-400 mb-2">Not eligible for loan</p>
                 <p className="text-xs text-gray-700 dark:text-gray-400 mb-3">
                   Reason: {eligibilityReason}
@@ -477,7 +477,7 @@ export default function Loans() {
                   <span className="font-mono font-medium text-gray-700 dark:text-gray-400">600 / 1000</span>
                 </div>
                 {creditScore < 600 && (
-                  <div className="mt-3 p-2 rounded bg-gray-200 dark:bg-gray-900/50">
+                  <div className="mt-3 p-2  bg-gray-200 dark:bg-gray-900/50">
                     <p className="text-xs text-gray-700 dark:text-gray-400">
                       Needs to fetch credit score:
                     </p>
@@ -557,13 +557,13 @@ export default function Loans() {
               )}
 
               {error && (
-                <div className="p-3 rounded-lg bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20">
+                <div className="p-3  bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20">
                   <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
                 </div>
               )}
 
               {writeError && (
-                <div className="p-3 rounded-lg bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20">
+                <div className="p-3  bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20">
                   <p className="text-sm text-red-600 dark:text-red-400">
                     Transaction failed: {writeError.message}
                   </p>
@@ -571,7 +571,7 @@ export default function Loans() {
               )}
 
               {isSuccess && (
-                <div className="p-3 rounded-lg bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20">
+                <div className="p-3  bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20">
                   <p className="text-sm text-emerald-600 dark:text-emerald-400">
                     Loan request submitted successfully!
                   </p>
