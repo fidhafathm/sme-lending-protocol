@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,10 +8,13 @@
   }
 
   body {
-    @apply bg-black text-gray-100;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    @apply bg-white dark:bg-black text-gray-900 dark:text-gray-100 font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-gray-900 dark:text-gray-100;
   }
 
   /* Custom Scrollbar */
@@ -66,23 +67,23 @@
 
   /* Professional Cards */
   .card {
-    @apply bg-zinc-950/50 backdrop-blur-sm border border-gray-900 rounded-xl p-6
+    @apply bg-gray-50 dark:bg-zinc-950/50 backdrop-blur-sm border border-gray-200 dark:border-gray-900 rounded-xl p-6
            transition-all duration-200 ease-out;
   }
 
   .card-hover {
-    @apply card hover:border-gray-800 hover:bg-zinc-950/70;
+    @apply card hover:border-gray-300 dark:hover:border-gray-800 hover:bg-gray-100 dark:hover:bg-zinc-950/70;
   }
 
   .card-bordered {
-    @apply card border-gray-800;
+    @apply card border-gray-300 dark:border-gray-800;
   }
 
   /* Professional Inputs */
   .input {
-    @apply w-full px-4 py-2.5 bg-black border border-gray-800 rounded-lg
-           text-gray-100 text-sm placeholder-gray-600
-           focus:outline-none focus:border-gray-700 focus:bg-zinc-950
+    @apply w-full px-4 py-2.5 bg-white dark:bg-black border border-gray-300 dark:border-gray-800 rounded-lg
+           text-gray-900 dark:text-gray-100 text-sm placeholder-gray-400 dark:placeholder-gray-600
+           focus:outline-none focus:border-gray-400 dark:focus:border-gray-700 focus:bg-gray-50 dark:focus:bg-zinc-950
            transition-all duration-200 ease-out;
   }
 
@@ -113,16 +114,16 @@
 
   /* Stats Display */
   .stat-card {
-    @apply flex flex-col space-y-1.5 p-4 rounded-lg bg-zinc-950/30 border border-gray-900
+    @apply flex flex-col space-y-1.5 p-4 rounded-lg bg-gray-50 dark:bg-zinc-950/30 border border-gray-200 dark:border-gray-900
            transition-all duration-200 ease-out;
   }
 
   .stat-label {
-    @apply text-xs font-medium text-gray-500 uppercase tracking-wide;
+    @apply text-xs font-medium text-gray-600 dark:text-gray-500 uppercase tracking-wide;
   }
 
   .stat-value {
-    @apply text-2xl font-semibold text-gray-100 tabular-nums;
+    @apply text-2xl font-semibold text-gray-900 dark:text-gray-100 tabular-nums;
   }
 
   .stat-change {
@@ -143,15 +144,15 @@
 
   /* Data Table Styles */
   .table-row {
-    @apply px-4 py-3 border-b border-gray-900 hover:bg-zinc-950/30 transition-colors duration-150;
+    @apply px-4 py-3 border-b border-gray-200 dark:border-gray-900 hover:bg-gray-50 dark:hover:bg-zinc-950/30 transition-colors duration-150;
   }
 
   .table-cell {
-    @apply text-sm text-gray-400 font-mono tabular-nums;
+    @apply text-sm text-gray-700 dark:text-gray-400 font-mono tabular-nums;
   }
 
   .table-header {
-    @apply text-xs font-medium text-gray-500 uppercase tracking-wide;
+    @apply text-xs font-medium text-gray-600 dark:text-gray-500 uppercase tracking-wide;
   }
 }
 
