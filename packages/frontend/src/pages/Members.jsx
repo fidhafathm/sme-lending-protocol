@@ -124,7 +124,7 @@ const ProposalCard = ({ proposal, proposalId, onVote, onExecute }) => {
       )}
 
       {proposal.executed && (
-        <div className="text-center p-3 rounded-lg bg-gray-100 dark:bg-zinc-950/30 border border-gray-300 dark:border-gray-900">
+        <div className="text-center p-3  bg-gray-100 dark:bg-zinc-950/30 border border-gray-300 dark:border-gray-900">
           <p className="text-sm text-gray-700 dark:text-gray-400">
             {proposal.approved ? 'Member admitted to DAO' : 'Proposal rejected'}
           </p>
@@ -287,7 +287,7 @@ export default function Members() {
         <div>
           {/* Error Display */}
           {error && (
-            <div className="mb-4 p-4 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900/30 rounded-lg">
+            <div className="mb-4 p-4 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900/30 ">
               <p className="text-sm text-red-600 dark:text-red-300 font-medium mb-2">Transaction Error</p>
               <p className="text-xs text-gray-700 dark:text-gray-400">{error.message}</p>
               {error.cause && (
@@ -298,13 +298,13 @@ export default function Members() {
 
           {/* Transaction Status */}
           {isPending && (
-            <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900/30 rounded-lg">
+            <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900/30 ">
               <p className="text-sm text-blue-600 dark:text-blue-300">Waiting for wallet confirmation...</p>
             </div>
           )}
 
           {isConfirming && (
-            <div className="mb-4 p-4 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 rounded-lg">
+            <div className="mb-4 p-4 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 ">
               <p className="text-sm text-amber-600 dark:text-amber-300">Transaction confirming...</p>
               {hash && (
                 <p className="text-xs text-gray-700 dark:text-gray-400 mt-1 font-mono">
@@ -322,7 +322,7 @@ export default function Members() {
           )}
 
           {isConfirmed && (
-            <div className="mb-4 p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/30 rounded-lg">
+            <div className="mb-4 p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/30 ">
               <p className="text-sm text-emerald-600 dark:text-emerald-300">Transaction confirmed!</p>
             </div>
           )}
