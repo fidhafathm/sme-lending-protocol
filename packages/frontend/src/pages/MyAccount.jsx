@@ -37,7 +37,7 @@ const StakeCard = ({ stakeInfo, onStake, onUnstake, onRequestUnstake, isProcessi
           <div className="stat-value text-xl">
             {formatUnits(stakedAmount, 18)}
           </div>
-          <span className="text-xs text-gray-600 dark:text-gray-600 font-mono">SMEDAO</span>
+          <span className="text-xs text-gray-600 dark:text-gray-600 font-mono">PRISM</span>
         </div>
 
         <div className="stat-card">
@@ -45,7 +45,7 @@ const StakeCard = ({ stakeInfo, onStake, onUnstake, onRequestUnstake, isProcessi
           <div className="stat-value text-xl text-amber-600 dark:text-amber-400">
             {formatUnits(unstakeAmount, 18)}
           </div>
-          <span className="text-xs text-gray-600 dark:text-gray-600 font-mono">SMEDAO</span>
+          <span className="text-xs text-gray-600 dark:text-gray-600 font-mono">PRISM</span>
         </div>
       </div>
 
@@ -150,7 +150,7 @@ const StakeCard = ({ stakeInfo, onStake, onUnstake, onRequestUnstake, isProcessi
         <div className="space-y-2 text-xs">
           <div className="flex justify-between text-gray-700 dark:text-gray-400">
             <span>Minimum Stake:</span>
-            <span className="text-gray-900 dark:text-gray-300 font-mono">100 SMEDAO</span>
+            <span className="text-gray-900 dark:text-gray-300 font-mono">100 PRISM</span>
           </div>
           <div className="flex justify-between text-gray-700 dark:text-gray-400">
             <span>Unstake Cooldown:</span>
@@ -344,7 +344,7 @@ export default function MyAccount() {
 
             <div className="stat-card">
               <div className="flex items-center justify-between mb-1">
-                <span className="stat-label">USDT</span>
+                <span className="stat-label">PYUSD</span>
                 <span className="text-xs text-gray-600 dark:text-gray-600 font-mono">Stablecoin</span>
               </div>
               <div className="stat-value text-emerald-600 dark:text-emerald-400">

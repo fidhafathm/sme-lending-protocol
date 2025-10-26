@@ -11,7 +11,7 @@ export const CHAIN_ID = {
 export const CONTRACTS = {
   sepolia: {
     // Base Protocol Contracts
-    mockUSDT: import.meta.env.VITE_MOCK_USDT_ADDRESS,
+    mockUSDT: import.meta.env.VITE_PYUSD_ADDRESS,
     creditScore: import.meta.env.VITE_CREDIT_SCORE_ADDRESS,
     lendingPool: import.meta.env.VITE_LENDING_POOL_ADDRESS,
     loanManager: import.meta.env.VITE_LOAN_MANAGER_ADDRESS,

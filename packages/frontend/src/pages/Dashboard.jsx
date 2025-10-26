@@ -263,7 +263,7 @@ export default function Dashboard() {
             },
             {
               title: 'Earn Yields',
-              description: 'Deposit USDT to earn passive yields from DeFi protocols',
+              description: 'Deposit PYUSD to earn passive yields from DeFi protocols',
             },
             {
               title: 'Build Reputation',

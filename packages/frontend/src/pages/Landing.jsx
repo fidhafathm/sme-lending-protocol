@@ -168,7 +168,7 @@ export default function Landing() {
               { title: "Insurance Pool", desc: "30% default protection coverage" },
               { title: "DAO Governance", desc: "67% majority for membership votes" },
               { title: "On-Chain Reputation", desc: "Non-transferable NFT scoring" },
-              { title: "Yield Generation", desc: "USDT deposits earn share-based returns" },
+              { title: "Yield Generation", desc: "PYUSD deposits earn share-based returns" },
             ].map((feature, i) => (
               <div
                 key={i}

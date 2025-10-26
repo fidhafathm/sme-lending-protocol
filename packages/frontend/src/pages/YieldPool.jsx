@@ -185,7 +185,7 @@ export default function YieldPool() {
 
         <div className="stat-card hover:border-gray-300 dark:hover:border-gray-800">
           <div className="flex items-center justify-between">
-            <span className="stat-label">USDT Balance</span>
+            <span className="stat-label">PYUSD Balance</span>
             <DollarSign className="w-4 h-4 text-gray-500 dark:text-gray-600" />
           </div>
           <div className="stat-value">
